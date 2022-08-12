@@ -1,0 +1,125 @@
+.mainCatalog {
+    margin: 100px 0 120px;
+
+    h3 {
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        margin-bottom: 60px;
+    }
+
+    .buttonsBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 61px;
+        padding-right: 6px;
+        margin-bottom: 55px;
+        overflow: hidden;
+    }
+
+    .catalog {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 280px 280px;
+        gap: 30px;
+
+        &Block {
+            position: relative;
+            background-color: #333333;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover img {
+                top: -10%;
+                left: -10%;
+                width: 120%;
+                height: 120%;
+                transition: 0.3s;
+            }
+
+            &:hover span {
+                bottom: 35px;
+                transition: 0.3s;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            span {
+                position: absolute;
+                bottom: 25px;
+                width: 100%;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                text-align: center;
+                color: #ffffff;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainCatalog {
+        margin: 50px 0 60px;
+    }
+}
+
+@media (max-width: 976px) {
+    .mainCatalog {
+        .catalog {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 280px 280px 280px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mainCatalog {
+        .buttonsBlock {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .mainCatalog {
+        .buttonsBlock {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 55px 55px;
+            height: auto;
+            padding-right: 0;
+            margin-bottom: 50px;
+            overflow: visible;
+        }
+
+        .catalog {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 280px);
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .mainCatalog {
+        .buttonsBlock {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 55px 55px 55px;
+        }
+    }
+}

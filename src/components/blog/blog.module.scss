@@ -1,0 +1,98 @@
+.blog {
+    margin-bottom: 116px;
+
+    h3 {
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        margin-bottom: 60px;
+    }
+
+    &Blocks {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 370px;
+        gap: 30px;
+        margin-bottom: 60px;
+
+        .blogBlock {
+            position: relative;
+            padding: 0 25px;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover img {
+                top: -10%;
+                left: -10%;
+                width: 120%;
+                height: 120%;
+                transition: 0.3s;
+            }
+
+            &:hover span {
+                bottom: 45px;
+                transition: 0.3s;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            span {
+                position: absolute;
+                left: 20%;
+                bottom: 35px;
+                width: 60%;
+                margin: 0 auto;
+                font-size: 21px;
+                line-height: 140%;
+                text-align: center;
+                color: #FFFFFF;
+                z-index: 2;
+            }
+        }
+    }
+
+    .button {
+        margin-left: calc(50% - 260px / 2);
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog {
+        &Blocks {
+            grid-template-columns: 1fr;
+            grid-template-rows: 370px 370px 370px;
+
+            .blogBlock {
+                span {
+                    left: 0;
+                    bottom: 35px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 335px) {
+    .blog {
+        .button {
+            margin-left: calc(50% - 214px / 2);
+        }
+    }
+}

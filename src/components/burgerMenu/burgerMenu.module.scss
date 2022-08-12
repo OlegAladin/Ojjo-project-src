@@ -1,0 +1,168 @@
+.burgerMenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #333333;
+    box-shadow: 0px 1px 5px 1px #000000;
+    transform: translateX(+105%);
+    z-index: 99;
+
+    &Top {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 35px;
+
+        .logo {
+            width: 216px;
+            height: 52px;
+        }
+
+        .closeBtn {
+            width: 50px;
+            height: 50px;
+
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &:active {
+                opacity: 0.3;
+            }
+        }
+    }
+
+    ul {
+        padding: 30px 35px 35px;
+        font-size: 21px;
+        line-height: 140%;
+        color: #FFFFFF;
+
+        li {
+            margin-bottom: 30px;
+
+            &:hover {
+                color: #bdbdbd;
+                text-decoration: underline;
+            }
+
+            &:active {
+                color: #909090;
+            }
+        }
+    }
+
+    .userBlock {
+        padding: 30px 0;
+        margin: 0 35px;
+        border-top: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
+
+        img {
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &:active {
+                opacity: 0.3;
+            }
+        }
+
+        .account {
+            width: 50px;
+            height: 50px;
+            margin-right: 35px;
+        }
+
+        .cart {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .socialBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0 125px;
+        margin: 0 35px;
+
+        img {
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &:active {
+                opacity: 0.3;
+            }
+        }
+
+        .youtube {
+            width: 39px;
+            height: 39px;
+        }
+
+        .vk {
+            width: 36px;
+            height: 36px;
+        }
+
+        .facebook {
+            width: 40px;
+            height: 39px;
+        }
+
+        .telegram {
+            width: 36px;
+            height: 36px;
+        }
+
+        .etsy {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.openMenu {
+    transform: translateX(0);
+    animation: openMenu 0.5s forwards;
+}
+
+.closeMenu {
+    transform: translateX(+105%);
+    animation: closeMenu 0.5s forwards;
+}
+
+@keyframes openMenu {
+    0% {
+        transform: translate(+105%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(+105%);
+    }
+}
+
+@media (max-width: 330px) {
+    .burgerMenu {
+        &Top {
+
+            .logo {
+                width: 150px;
+                height: auto;
+            }
+        }
+    }
+}

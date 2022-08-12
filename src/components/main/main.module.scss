@@ -1,0 +1,119 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 111px 3fr 1fr 119px;
+    width: 100%;
+    height: 100vh;
+    background-image: url('./../../images/main-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    &Text {
+        position: relative;
+
+        h1 {
+            position: absolute;
+            left: 0;
+            bottom: 25px;
+            width: 100%;
+            font-family: "NotoSerif-Bold";
+            font-size: 36px;
+            color: #ffffff;
+            line-height: 49px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+
+    &Button {
+        position: relative;
+
+        .button {
+            position: absolute;
+            left: 0;
+            top: 25px;
+            margin-left: calc(50% - 260px / 2);
+        }
+    }
+
+    &Bottom {
+        height: 120px;
+        border-top: 1px solid #ffffff;
+
+        &Blocks {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            .mainBottomBlock {
+                padding: 0 14px;
+                border-right: 1px solid #ffffff;
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    padding-right: 0;
+                    border-right: none;
+                }
+
+                img {
+                    width: 160px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .main {
+        grid-template-rows: 111px 3fr 1fr 80px;
+
+        &Bottom {
+            height: 80px;
+
+            &Blocks {
+                .mainBottomBlock {
+                    img {
+                        width: 120px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    .main {
+        grid-template-rows: 50px 3fr 2fr;
+
+        &Bottom {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 335px) {
+    .main {
+        &Button {
+            .button {
+                margin-left: calc(50% - 217px / 2);
+            }
+        }
+    }
+}
+
+@media (max-width: 286px) {
+    .main {
+        &Text {
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
+}
